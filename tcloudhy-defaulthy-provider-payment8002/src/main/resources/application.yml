@@ -1,0 +1,26 @@
+server:
+  port: 8002
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/tcloud?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: 123456
+  application:
+    name: tcloud-payment-provider
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://www.eureka7001.com:7001/eureka
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true
